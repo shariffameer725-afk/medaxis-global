@@ -1,65 +1,52 @@
-/*
-  MEDAXIS LEAD FORM
-  -----------------
-  Before launch:
-  1. Create a Google Sheet owned by the MedAxis company.
-  2. Create a Google Apps Script attached to that Sheet.
-  3. Deploy it as a Web App ("Anyone" with access).
-  4. Paste the Web App URL below.
-*/
+const intro = document.getElementById("intro");
+const steps = [...document.querySelectorAll(".journey-step")];
 
-const CONFIG = {
-  GOOGLE_SCRIPT_URL: "PASTE_MEDAXIS_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"
-};
+function showStep(name){
+  steps.forEach(s => s.classList.toggle("active", s.dataset.step === name));
+}
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+document.querySelectorAll("[data-next]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    showStep(btn.dataset.next);
+  });
+});
 
-menuToggle?.addEventListener("click", () => nav.classList.toggle("open"));
-document.querySelectorAll(".nav a").forEach(a =>
-  a.addEventListener("click", () => nav.classList.remove("open"))
-);
+document.querySelector("[data-finish]")?.addEventListener("click",()=>{
+  intro.classList.add("hide");
+  setTimeout(()=>document.getElementById("site").scrollIntoView({behavior:"smooth"}),250);
+});
 
-const form = document.getElementById("leadForm");
-const success = document.getElementById("formSuccess");
-const submitButton = form?.querySelector("button[type='submit']");
+document.getElementById("skipIntro").addEventListener("click",()=>{
+  intro.classList.add("hide");
+});
 
-form?.addEventListener("submit", async (e) => {
+document.querySelectorAll(".view-photo").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const card = btn.closest(".destination-card");
+    const img = card.querySelector("img");
+    const lightbox = document.getElementById("lightbox");
+    document.getElementById("lightboxImage").src = img.src;
+    document.getElementById("lightboxImage").alt = img.alt;
+    lightbox.classList.add("show");
+    lightbox.setAttribute("aria-hidden","false");
+  });
+});
+
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("show");
+  document.getElementById("lightbox").setAttribute("aria-hidden","true");
+}
+document.getElementById("closeLightbox").addEventListener("click",closeLightbox);
+document.getElementById("lightbox").addEventListener("click",e=>{
+  if(e.target.id === "lightbox") closeLightbox();
+});
+
+document.getElementById("contactForm").addEventListener("submit",e=>{
   e.preventDefault();
+  document.getElementById("formMessage").textContent =
+    "Thanks — your request is ready to be connected to your counselling inbox.";
+});
 
-  if (!CONFIG.GOOGLE_SCRIPT_URL || CONFIG.GOOGLE_SCRIPT_URL.includes("PASTE_MEDAXIS")) {
-    success.textContent =
-      "The website form is ready, but the MedAxis Google Sheet connection has not been configured yet.";
-    success.style.display = "block";
-    return;
-  }
-
-  const data = Object.fromEntries(new FormData(form).entries());
-
-  submitButton.disabled = true;
-  submitButton.textContent = "Sending...";
-
-  try {
-    await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({
-        submittedAt: new Date().toISOString(),
-        ...data
-      })
-    });
-
-    form.reset();
-    success.textContent =
-      "Thank you! Your enquiry has been submitted. The MedAxis team will contact you.";
-    success.style.display = "block";
-  } catch (error) {
-    success.textContent =
-      "We couldn't submit the enquiry right now. Please contact MedAxis directly by phone or WhatsApp.";
-    success.style.display = "block";
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = "Submit Enquiry →";
-  }
+document.addEventListener("keydown",e=>{
+  if(e.key === "Escape") closeLightbox();
 });

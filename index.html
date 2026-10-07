@@ -1,172 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MedAxis Global Consultancy - Guidance for students exploring medical education opportunities abroad.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>MedAxis Global Consultancy | Your Trusted Path to Abroad</title>
+  <meta name="description" content="MedAxis Global Consultancy helps students explore medical education abroad, destinations, universities and application pathways.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topbar">
-    <span>Guidance for your medical education journey abroad</span>
-    <a href="#contact">Talk to a counsellor →</a>
+  <div class="intro" id="intro">
+    <div class="intro-bg"></div>
+    <div class="intro-shade"></div>
+    <div class="stars"></div>
+
+    <div class="intro-inner">
+      <div class="brand-lockup reveal">
+        <div class="premium-logo" aria-label="MedAxis Global logo">
+          <div class="logo-orbit orbit-a"></div>
+          <div class="logo-orbit orbit-b"></div>
+          <div class="logo-core"><span>M</span></div>
+          <div class="logo-glow"></div>
+        </div>
+        <div class="brand-name"><span>MEDAXIS</span> <b>GLOBAL</b></div>
+        <div class="brand-tag">YOUR TRUSTED PATH TO ABROAD</div>
+      </div>
+
+      <div class="journey-step active" data-step="neet">
+        <div class="eyebrow">WELCOME TO MEDAXIS GLOBAL</div>
+        <h1>Have you<br><em>passed NEET?</em></h1>
+        <p>Let's understand where you are today and show you the right path forward.</p>
+        <div class="choices">
+          <button class="choice primary" data-next="passed">Yes, I have passed NEET <span>↗</span></button>
+          <button class="choice secondary" data-next="notpassed">Not yet <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="journey-step" data-step="passed">
+        <div class="eyebrow">GOOD START — LET'S FIND YOUR PATH</div>
+        <h1>Is your dream to<br><em>study medicine abroad?</em></h1>
+        <p>We'll help you explore suitable destinations, universities and the next steps — clearly and responsibly.</p>
+        <div class="choices">
+          <button class="choice primary" data-next="destination">Yes, that's my dream <span>↗</span></button>
+          <button class="choice secondary" data-next="destination">I want to explore options <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="journey-step" data-step="notpassed">
+        <div class="eyebrow">YOUR JOURNEY IS STILL OPEN</div>
+        <h1>Not passed yet?<br><em>Your dream still matters.</em></h1>
+        <p>We'll help you understand realistic pathways, eligibility and what you can do next — without false promises.</p>
+        <div class="choices">
+          <button class="choice primary" data-next="destination">Show me my options <span>↗</span></button>
+          <button class="choice secondary" data-next="destination">I want guidance first <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="journey-step" data-step="destination">
+        <div class="eyebrow">YOUR NEXT CHAPTER</div>
+        <h1>Let's find the right<br><em>country for you.</em></h1>
+        <p>Compare destinations, universities, costs and application considerations with a clearer starting point.</p>
+        <div class="choices">
+          <button class="choice primary" data-finish>Explore MedAxis <span>↗</span></button>
+        </div>
+      </div>
+
+      <button class="skip" id="skipIntro">Skip intro</button>
+    </div>
   </div>
 
-  <header class="header">
-    <a class="brand" href="#home" aria-label="MedAxis Global Consultancy home">
-      <span class="brand-mark">M</span>
-      <span><strong>MedAxis</strong><small>GLOBAL CONSULTANCY</small></span>
-    </a>
+  <main id="site">
+    <header class="nav">
+      <a class="nav-brand" href="#top">
+        <span class="mini-logo">M</span>
+        <span>MedAxis <b>Global</b></span>
+      </a>
+      <nav>
+        <a href="#destinations">Destinations</a>
+        <a href="#why">Why us</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Free counselling <span>↗</span></a>
+    </header>
 
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
-    <nav class="nav">
-      <a href="#why">Why MedAxis</a>
-      <a href="#countries">Destinations</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#contact">Apply Now</a>
-    </nav>
-  </header>
-
-  <main id="home">
-    <section class="hero">
-      <div class="hero-bg"></div>
+    <section class="hero" id="top">
+      <div class="hero-image"></div>
+      <div class="hero-gradient"></div>
       <div class="hero-content">
-        <div class="eyebrow"><span></span> MEDICAL EDUCATION ABROAD</div>
-        <h1>Your Trusted Path to <em>Medical Education</em> Abroad</h1>
-        <p>Get clear, personalised guidance on destinations, universities, applications and the next steps in your journey.</p>
+        <div class="eyebrow pill">MEDICAL EDUCATION ABROAD</div>
+        <h2>A clearer path to<br><em>your medical future.</em></h2>
+        <p>Explore international medical education with guidance designed around your goals, eligibility and next steps.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#contact">Get Free Counselling <span>→</span></a>
-          <a class="btn secondary" href="#process">See How It Works</a>
+          <a class="button light" href="#destinations">Explore destinations ↗</a>
+          <a class="button glass" href="#contact">Book free counselling</a>
         </div>
-        <div class="trust-row">
-          <div><span>✓</span> Personalised guidance</div>
-          <div><span>✓</span> Application support</div>
-          <div><span>✓</span> Student-focused approach</div>
+        <div class="hero-proof">
+          <span>01</span><b>Personal guidance</b>
+          <span>02</span><b>Destination research</b>
+          <span>03</span><b>Application support</b>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="card-top">
-          <span class="pulse"></span> START YOUR JOURNEY
-        </div>
-        <h3>Not sure where to begin?</h3>
-        <p>Share a few details and our team can help you understand your options.</p>
-        <a href="#contact">Speak with a counsellor →</a>
-      </div>
+      <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
     </section>
 
-    <section class="intro section">
-      <div class="section-label">WHY STUDENTS START WITH US</div>
-      <div class="intro-grid">
+    <section class="intro-copy section" id="why">
+      <div class="section-kicker">THE MEDAXIS APPROACH</div>
+      <div class="two-col">
+        <h2>Big decisions deserve<br><em>clear guidance.</em></h2>
         <div>
-          <h2>A clearer route to your <span>global medical education</span> goals.</h2>
+          <p class="large">Choosing where to study medicine is more than picking a country. We help students and parents understand the journey before taking the next step.</p>
+          <a class="text-link" href="#process">See how we work →</a>
         </div>
+      </div>
+    </section>
+
+    <section class="destination-section section" id="destinations">
+      <div class="section-head">
         <div>
-          <p>Choosing a medical university abroad is a major decision. MedAxis Global Consultancy is designed to make the process easier to understand — from exploring destinations to preparing for applications and the next stages.</p>
+          <div class="section-kicker">EXPLORE THE WORLD</div>
+          <h2>Destinations worth<br><em>discovering.</em></h2>
         </div>
+        <p>Reference destinations for your research. Final university and eligibility decisions should always be verified against current official requirements.</p>
+      </div>
+
+      <div class="photo-grid">
+        <article class="destination-card tall">
+          <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85" alt="European university architecture">
+          <div class="card-shade"></div>
+          <div class="card-content"><span>EUROPE</span><h3>Study beyond<br>the familiar.</h3><button class="view-photo">View <i>↗</i></button></div>
+        </article>
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=1200&q=85" alt="Modern city skyline abroad">
+          <div class="card-shade"></div>
+          <div class="card-content"><span>GLOBAL OPTIONS</span><h3>International<br>possibilities.</h3><button class="view-photo">View <i>↗</i></button></div>
+        </article>
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85" alt="University campus">
+          <div class="card-shade"></div>
+          <div class="card-content"><span>UNIVERSITIES</span><h3>Find your<br>right fit.</h3><button class="view-photo">View <i>↗</i></button></div>
+        </article>
       </div>
     </section>
 
-    <section id="why" class="why section">
-      <div class="section-heading">
-        <div class="section-label">WHY MEDAXIS</div>
-        <h2>Support that stays focused on <span>your journey.</span></h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature"><div class="icon">◎</div><h3>Personalised Counselling</h3><p>Understand your options based on your goals, preferences and academic situation.</p></article>
-        <article class="feature"><div class="icon">⌁</div><h3>University Guidance</h3><p>Explore suitable universities and compare important factors before making a decision.</p></article>
-        <article class="feature"><div class="icon">✓</div><h3>Application Assistance</h3><p>Get step-by-step support while preparing documents and moving through the application process.</p></article>
-        <article class="feature"><div class="icon">✈</div><h3>Pre-Departure Guidance</h3><p>Get practical guidance on the next steps after admission, based on the services offered by MedAxis.</p></article>
+    <section class="values section">
+      <div class="section-kicker">WHY MEDAXIS GLOBAL</div>
+      <div class="values-grid">
+        <article><span>01</span><h3>Clear decisions</h3><p>Understand your options before committing to a pathway.</p></article>
+        <article><span>02</span><h3>Student-first</h3><p>Start with your goals, profile and questions — not a one-size-fits-all pitch.</p></article>
+        <article><span>03</span><h3>Step by step</h3><p>From exploration to applications, keep the journey organised and understandable.</p></article>
+        <article><span>04</span><h3>Responsible guidance</h3><p>We avoid unrealistic guarantees and encourage verification of official requirements.</p></article>
       </div>
     </section>
 
-    <section id="countries" class="destinations section">
-      <div class="section-heading centered">
-        <div class="section-label">EXPLORE DESTINATIONS</div>
-        <h2>Find the destination that <span>fits your goals.</span></h2>
-        <p>Country availability, universities and programmes can be updated by the MedAxis team.</p>
-      </div>
-      <div class="country-grid">
-        <article class="country"><div class="country-img img1"></div><div class="country-body"><span>DESTINATION</span><h3>Russia</h3><p>Explore medical education options and university pathways.</p><a href="#contact">Enquire →</a></div></article>
-        <article class="country"><div class="country-img img2"></div><div class="country-body"><span>DESTINATION</span><h3>Georgia</h3><p>Learn about available medical education opportunities.</p><a href="#contact">Enquire →</a></div></article>
-        <article class="country"><div class="country-img img3"></div><div class="country-body"><span>DESTINATION</span><h3>Kazakhstan</h3><p>Discuss universities, eligibility and application steps.</p><a href="#contact">Enquire →</a></div></article>
-        <article class="country"><div class="country-img img4"></div><div class="country-body"><span>DESTINATION</span><h3>Uzbekistan</h3><p>Get guidance on your possible study-abroad route.</p><a href="#contact">Enquire →</a></div></article>
-      </div>
-      <p class="small-note">*The destination list above is a sample. Replace it with countries and universities confirmed by the client.</p>
-    </section>
-
-    <section id="process" class="process section">
-      <div class="process-copy">
-        <div class="section-label">HOW IT WORKS</div>
-        <h2>Your journey, <span>step by step.</span></h2>
-        <p>We keep the process straightforward so students and parents can understand what happens next.</p>
-        <a class="btn primary" href="#contact">Start With Counselling →</a>
-      </div>
-      <div class="steps">
-        <div class="step"><b>01</b><div><h3>Initial Counselling</h3><p>Discuss your goals, preferences and questions.</p></div></div>
-        <div class="step"><b>02</b><div><h3>Explore Options</h3><p>Review relevant destinations and university choices.</p></div></div>
-        <div class="step"><b>03</b><div><h3>Application Support</h3><p>Prepare and organise the required application information.</p></div></div>
-        <div class="step"><b>04</b><div><h3>Next-Step Guidance</h3><p>Continue with the admission and pre-departure stages applicable to your case.</p></div></div>
+    <section class="process section" id="process">
+      <div class="section-kicker">THE JOURNEY</div>
+      <h2>From first question<br>to <em>next step.</em></h2>
+      <div class="process-list">
+        <div><span>01</span><b>Understand</b><p>Tell us about your current situation and what you want to achieve.</p></div>
+        <div><span>02</span><b>Explore</b><p>Review destinations, universities and key considerations.</p></div>
+        <div><span>03</span><b>Plan</b><p>Build a practical shortlist and understand the application path.</p></div>
+        <div><span>04</span><b>Move forward</b><p>Take the next step with a clearer plan and the right questions.</p></div>
       </div>
     </section>
 
-    <section class="cta-banner">
-      <div>
-        <div class="section-label">READY TO EXPLORE?</div>
-        <h2>Let's plan your next step together.</h2>
+    <section class="contact section" id="contact">
+      <div class="contact-copy">
+        <div class="section-kicker">PRIVATE GUIDANCE</div>
+        <h2>Not sure where<br><em>to begin?</em></h2>
+        <p>Book a free counselling session and tell us where you are in your journey.</p>
       </div>
-      <a class="btn light" href="#contact">Get Free Counselling →</a>
-    </section>
-
-    <section id="faq" class="faq section">
-      <div class="section-heading centered">
-        <div class="section-label">FAQ</div>
-        <h2>Questions students <span>often ask.</span></h2>
-      </div>
-      <div class="faq-list">
-        <details><summary>Who can contact MedAxis?</summary><p>Students and parents/guardians exploring medical education opportunities abroad can contact the consultancy for guidance.</p></details>
-        <details><summary>Can MedAxis help me choose a university?</summary><p>The team can provide guidance on available options and help you understand the factors to consider. Final choices should be made after reviewing official university and regulatory information.</p></details>
-        <details><summary>Do you guarantee admission or a visa?</summary><p>No guarantee should be assumed. Admission and visa decisions depend on the relevant university, authorities and the applicant's circumstances.</p></details>
-        <details><summary>What should I bring to the counselling call?</summary><p>Keep your academic details, NEET information where applicable, preferred destinations and questions ready. The counsellor can tell you what documents are needed for your specific case.</p></details>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section">
-      <div class="contact-info">
-        <div class="section-label">GET IN TOUCH</div>
-        <h2>Take the first step toward your <span>abroad journey.</span></h2>
-        <p>Tell us a little about yourself and what you're looking for. The MedAxis team can get in touch with you.</p>
-        <div class="contact-points">
-          <div><b>WhatsApp</b><span>+91 XXXXX XXXXX</span></div>
-          <div><b>Call</b><span>+91 XXXXX XXXXX</span></div>
-          <div><b>Email</b><span>hello@medaxisglobal.com</span></div>
-        </div>
-      </div>
-      <form class="lead-form" id="leadForm">
-        <h3>Get Free Counselling</h3>
-        <p>Fill in your details and we'll get back to you.</p>
-        <div class="two"><label>Full Name<input required name="name" placeholder="Your name"></label><label>Phone<input required name="phone" placeholder="+91"></label></div>
-        <label>Email<input type="email" name="email" placeholder="you@example.com"></label>
-        <div class="two"><label>NEET Status<select name="neet"><option value="">Select</option><option>Qualified</option><option>Appeared</option><option>Preparing</option><option>Not applicable</option></select></label><label>Preferred Country<select name="country"><option value="">Select</option><option>Russia</option><option>Georgia</option><option>Kazakhstan</option><option>Uzbekistan</option><option>Other</option></select></label></div>
-        <label>Message<textarea name="message" rows="4" placeholder="Tell us what you would like to know..."></textarea></label>
-        <label class="check"><input required type="checkbox"> I agree to be contacted regarding my enquiry.</label>
-        <button class="btn primary full" type="submit">Submit Enquiry →</button>
-        <div class="form-success" id="formSuccess">Thanks! Your enquiry has been recorded on this demo form. Connect this form to the client's email/CRM before launch.</div>
+      <form class="contact-form" id="contactForm">
+        <label>Full name<input required type="text" placeholder="Your name"></label>
+        <label>Phone / WhatsApp<input required type="tel" placeholder="+91"></label>
+        <label>NEET status
+          <select><option>Passed NEET</option><option>Not yet</option><option>Preparing</option><option>Prefer to discuss</option></select>
+        </label>
+        <label>What would you like help with?<textarea rows="4" placeholder="Tell us briefly..."></textarea></label>
+        <button class="button light full" type="submit">Request free counselling ↗</button>
+        <small id="formMessage"></small>
       </form>
     </section>
+
+    <footer>
+      <div class="footer-brand"><span class="mini-logo">M</span> MedAxis <b>Global</b></div>
+      <p>Your trusted path to abroad.</p>
+      <span>© 2026 MedAxis Global Consultancy</span>
+    </footer>
   </main>
 
-  <footer class="footer">
-    <div class="footer-brand"><span class="brand-mark">M</span><div><strong>MedAxis Global Consultancy</strong><small>Your Trusted Path to Abroad</small></div></div>
-    <div class="footer-links"><a href="#why">Why MedAxis</a><a href="#countries">Destinations</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
-    <p>© 2026 MedAxis Global Consultancy. All rights reserved.</p>
-  </footer>
+  <a class="floating-counselling" href="#contact">
+    <span class="float-dot"></span>
+    <span><small>FREE</small> COUNSELLING</span>
+    <b>↗</b>
+  </a>
 
-  <a class="floating-wa" href="#" aria-label="WhatsApp">◔</a>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
